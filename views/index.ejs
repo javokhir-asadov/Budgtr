@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css" />
+<link rel="stylesheet" href="/css/skeleton.css" />
+<script defer src="/js/scripts.js"></script>
+    <title>Budget</title>
+</head>
+<body>
+   
+  <div class="container">
+    <h1>Budgtr </h1>
+     <header class="span">   
+         <a href="/budgets/new"><button>New Item</button></a>   
+        <table class="secondTable">
+                <tr>
+                <th scope="col">Balance</th>
+                <th scope="col">Current</th>
+            </tr>
+            <tr>
+            <th scope="row">&#9776</th>
+            <td> <%= bankAccount %></td>
+        </tr>  
+        </table> 
+    </header>
+      
+        <table> 
+            <% for(let i = 0; i < budgets.length; i++) { %> 
+            <tr> 
+                <td><%= budgets[i].date %></td>  
+                <td><a href="/budgets/<%= i %>"><%= budgets[i].name %></a></td>   
+                <td><%= budgets[i].amount %></td>
+            </tr> 
+            <% } %>        
+        </table>
+    </div>
+ 
+</body>
+</html>
